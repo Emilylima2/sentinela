@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #dcecff;
+    margin: 0;
+    color: #163b63;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(20, 70, 130, 0.18);
+    text-align: center;
+}
+
+input,
+select,
+textarea,
+button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #a9c6e6;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2878b8;
+    box-shadow: 0 0 5px rgba(40, 120, 184, 0.3);
+}
+
+textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+button {
+    background: #1769aa;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #12558c;
+}
+
+.card {
+    border: 1px solid #b8d2ed;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    background: #f3f8fd;
+    box-shadow: 0 2px 8px rgba(20, 70, 130, 0.12);
+    text-align: center;
+}
+
+.verde {
+    background: #2878b8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.amarelo {
+    background: #4d94cc;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.vermelho {
+    background: #145a8d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
