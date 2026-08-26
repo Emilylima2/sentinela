@@ -39,26 +39,56 @@
 </div>
 
 <script>
-function cadastrar(){
- fetch("http://localhost:3000/atendimento",{
-  method:"POST",
-  headers:{"Content-Type":"application/json"},
-  body: JSON.stringify({
-    nome: nome.value,
-    cpf: cpf.value,
-    datadenascimento: datadenascimento.value,
-    nomedamae: nomedamae.value,
-    endereco: endereco.value,
-    telefone: telefone.value,
-    email: email.value,
-    contatodeemergencia: contatodeemergencia.value,
-    tipo: tipo.value,
-    sexo: sexo.value,
-    estadocivil: estadocivil.value
-  })
- });
- alert("Paciente enviado para triagem");
+<button type="button" onclick="cadastrar()">Cadastrar</button>
+
+<script>
+async function cadastrar() {
+
+  const dados = {
+    nome: document.getElementById("nome").value,
+    cpf: document.getElementById("cpf").value,
+    datadenascimento: document.getElementById("datadenascimento").value,
+    nomedamae: document.getElementById("nomedamae").value,
+    endereco: document.getElementById("endereco").value,
+    telefone: document.getElementById("telefone").value,
+    email: document.getElementById("email").value,
+    contatodeemergencia: document.getElementById("contatodeemergencia").value,
+    tipo: document.getElementById("tipo").value,
+    sexo: document.getElementById("sexo").value,
+    estadocivil: document.getElementById("estadocivil").value
+  };
+
+  console.log("ENVIANDO:", dados);
+
+  try {
+
+    const resposta = await fetch("/atendimento", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dados)
+    });
+
+    const resultado = await resposta.json();
+
+    console.log("RESPOSTA DO SERVIDOR:", resultado);
+
+    if (!resposta.ok) {
+      alert("Erro: " + JSON.stringify(resultado));
+      return;
+    }
+
+    alert("Paciente cadastrado!");
+
+  } catch (erro) {
+
+    console.error("ERRO:", erro);
+    alert("Erro ao conectar com o servidor.");
+  }
 }
+</script>
+
 </script>
 </body>
 </html>
