@@ -52,6 +52,9 @@ app.post("/login", (req, res) => {
 // ATENDIMENTO - cadastrar paciente
 app.post("/atendimento", (req, res) => {
   const db = readDB();
+  console.log("CHEGOU NO /ATENDIMENTO");
+console.log(req.body);
+
 
   const paciente = {
     id: Date.now(),
