@@ -57,6 +57,7 @@ app.post("/atendimento", (req, res) => {
     id: Date.now(),
     nome: req.body.nome,
     cpf: req.body.cpf,
+    
     tipo: req.body.tipo,
     status: "triagem",
     createdAt: new Date()
