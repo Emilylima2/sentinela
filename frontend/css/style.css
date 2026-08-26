@@ -4,11 +4,7 @@ body {
     margin: 0;
     color: #163b63;
 }
-.logo-tv {
-  max-width: 70%;
-  max-height: 80%;
-  object-fit: contain;
-}
+
 
 .container {
     width: 90%;
