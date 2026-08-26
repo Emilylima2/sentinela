@@ -57,8 +57,15 @@ app.post("/atendimento", (req, res) => {
     id: Date.now(),
     nome: req.body.nome,
     cpf: req.body.cpf,
-    
+    datadenascimento: req.body.datadenascimento,
+    nomedamae: req.body.nomedamae,
+    endereco: req.body.endereco,
+    telefone: req.body.telefone,
+    email: req.body.email,
+    contatodeemergencia: req.body.contatodeemergencia,
     tipo: req.body.tipo,
+     sexo: req.body.sexo,
+    estadocivil: req.body.estadocivil,
     status: "triagem",
     createdAt: new Date()
   };
