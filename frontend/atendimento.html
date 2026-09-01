@@ -34,61 +34,31 @@
 </select>
 
 <input type="file" id="foto">
-
 <button onclick="cadastrar()">Cadastrar</button>
 </div>
 
 <script>
-<button type="button" onclick="cadastrar()">Cadastrar</button>
+function cadastrar(){
+ fetch("http://localhost:3000/atendimento",{
+  method:"POST",
+  headers:{"Content-Type":"application/json"},
+  body: JSON.stringify({
+   nome: document.getElementById('nome').value,
+    cpf: document.getElementById('cpf').value,
+    datadenascimento: document.getElementById('datadenascimento').value,
+    nomedamae: document.getElementById('nomedamae').value,
+    endereco: document.getElementById('endereco').value,
+    telefone: document.getElementById('telefone').value,
+    email: document.getElementById('email').value,
+    contatodeemergencia: document.getElementById('contatodeemergencia').value,
+    tipo: document.getElementById('tipo').value,
+    sexo: document.getElementById('sexo').value,
+    estadocivil: document.getElementById('estadocivil').value
 
-<script>
-async function cadastrar() {
-
-  const dados = {
-    nome: document.getElementById("nome").value,
-    cpf: document.getElementById("cpf").value,
-    datadenascimento: document.getElementById("datadenascimento").value,
-    nomedamae: document.getElementById("nomedamae").value,
-    endereco: document.getElementById("endereco").value,
-    telefone: document.getElementById("telefone").value,
-    email: document.getElementById("email").value,
-    contatodeemergencia: document.getElementById("contatodeemergencia").value,
-    tipo: document.getElementById("tipo").value,
-    sexo: document.getElementById("sexo").value,
-    estadocivil: document.getElementById("estadocivil").value
-  };
-
-  console.log("ENVIANDO:", dados);
-
-  try {
-
-    const resposta = await fetch("/atendimento", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(dados)
-    });
-
-    const resultado = await resposta.json();
-
-    console.log("RESPOSTA DO SERVIDOR:", resultado);
-
-    if (!resposta.ok) {
-      alert("Erro: " + JSON.stringify(resultado));
-      return;
-    }
-
-    alert("Paciente cadastrado!");
-
-  } catch (erro) {
-
-    console.error("ERRO:", erro);
-    alert("Erro ao conectar com o servidor.");
-  }
+  })
+ });
+ alert("Paciente enviado para triagem");
 }
-</script>
-
 </script>
 </body>
 </html>
