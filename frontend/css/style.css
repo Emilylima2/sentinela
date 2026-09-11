@@ -1,6 +1,23 @@
+```css
 body {
     font-family: Arial, sans-serif;
-    background: #dcecff;
+
+    /* Fundo azul claro */
+    background-color: #dcecff;
+
+    /* LOGO NO FUNDO DA TELA */
+    background-image:
+        linear-gradient(
+            rgba(220, 236, 255, 0.88),
+            rgba(220, 236, 255, 0.88)
+        ),
+        url("../img/logo.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 380px;
+    background-attachment: fixed;
+
     margin: 0;
     color: #163b63;
 }
@@ -17,6 +34,7 @@ body {
     text-align: center;
 }
 
+
 input,
 select,
 textarea,
@@ -30,6 +48,7 @@ button {
     font-size: 16px;
 }
 
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -38,10 +57,12 @@ textarea:focus {
     box-shadow: 0 0 5px rgba(40, 120, 184, 0.3);
 }
 
+
 textarea {
     min-height: 100px;
     resize: none;
 }
+
 
 button {
     background: #1769aa;
@@ -52,9 +73,11 @@ button {
     transition: 0.3s;
 }
 
+
 button:hover {
     background: #12558c;
 }
+
 
 .card {
     border: 1px solid #b8d2ed;
@@ -66,12 +89,14 @@ button:hover {
     text-align: center;
 }
 
+
 .verde {
     background: #2878b8;
     color: white;
     padding: 5px 10px;
     border-radius: 6px;
 }
+
 
 .amarelo {
     background: #4d94cc;
@@ -80,9 +105,11 @@ button:hover {
     border-radius: 6px;
 }
 
+
 .vermelho {
     background: #145a8d;
     color: white;
     padding: 5px 10px;
     border-radius: 6px;
 }
+```
